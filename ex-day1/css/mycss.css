@@ -1,0 +1,40 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  background-image: url(../img/dog.jpg);
+}
+.someClass {
+  font-size: 24px;
+}
+.special i {
+  color: green;
+}
+/*  h1, h2, h3, h4, h5, h6 {
+    font-size: 1em;
+    font-weight: normal;
+    margin: 0;
+  }*/
+#main {
+  width: 80%;
+  margin: 20px auto 0;
+  background-color: #ffffcc;
+}
+
+#main img {
+  color: #111111;
+  color: rgb(17,17,17);
+}
+#dog {
+  /*box-sizing: border-box;*/
+  width: 80%;
+  margin: 20px auto;
+  display: block;
+  border: 100px double green;
+}
+
+
+
+
+
+
