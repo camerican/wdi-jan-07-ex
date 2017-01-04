@@ -1,0 +1,70 @@
+/*.container {
+  font-size: 0;
+}*/
+body {
+  margin: 0;
+}
+.box {
+  width: 200px;
+  height: 200px;
+  border: 2px dotted black;
+  display: inline-block;
+  font-size: 40px;
+  text-align: center;
+  line-height: 200px;
+  vertical-align: middle;
+  float: left;
+  margin: 0 20px 20px 0;
+  background-color: grey;
+}
+body > header {
+  background-color:purple;
+  position: fixed;
+  top:0;
+  left:0;
+  right:0;
+  height: 60px;
+  z-index:1;
+}
+#buffer {
+  height:60px;
+}
+.container {
+  background-color: #ffffcc;
+  height: 440px;
+  position: relative;
+}
+#box_1 {
+  background-color: red;
+  position: absolute;
+  top:0;
+  left:0;
+}
+#box_2 {
+  background-color: green;
+  position:absolute;
+  top:0;
+  right:-20px;
+  z-index:2;
+}
+#box_3 {
+  background-color: blue;
+/*  clear: left;*/
+  position:relative;
+  top:100px;
+}
+#box_4 {
+  background-color: grey;
+  position:relative;
+}
+.circle{
+  width:50px;
+  height:50px;
+  border-radius:50%;
+  background-color:orange;
+  position: absolute;
+  top:0;
+}
+
+
+
