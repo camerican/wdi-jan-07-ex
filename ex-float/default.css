@@ -81,7 +81,11 @@ body > header {
   position: absolute;
   top:0;
 }
-
+#box_8 {
+  background-image: url(dog.jpg);
+  background-size: cover;
+  background-position: center center;
+}
 @keyframes growing {
   from {
     width: 1px;
@@ -109,7 +113,18 @@ body > header {
 }
 
 
+@media (max-width: 750px){
+  body > header {
+    background-color: orange;
+  }
+}
 
+@media (max-width: 600px) {
+  .box.special {
+    display:none;
+    /*visibility: hidden;*/
+  }
+}
 
 
 
