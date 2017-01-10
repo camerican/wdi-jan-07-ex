@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Ex 2 Sample</title>
+  <script>
+  // Put JavaScript here in the head
+  // normally we want to include js in
+  // an external file
+  function update(){
+
+    var el = document.getElementById("target");
+
+    var default = "Click me";
+    
+    if( el.innerText == default ) {
+      //original state, switch to congrats
+      el.innerText = "Well done!";
+    } else {
+      //we've already changed it... so return to 
+      //previous state
+      el.innerText = default;
+    }
+  }
+  </script>
+</head>
+<body>
+  <div onclick="update()" id="target">Click me</div>
+</body>
+</html>
