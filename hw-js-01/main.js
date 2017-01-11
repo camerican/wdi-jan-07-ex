@@ -24,11 +24,24 @@ function doorGame(prizes){
     doorGame(prizes);
   } else {
     alert("Congrats, you just won " + prizes[door-1])
+    return prizes[door-1];
   }
-  return prizes[door-1];
 } 
+
+function doorGames2() {
+  console.log(arguments);
+  var door = parseInt(prompt("Please pick a door"));
+  if( !arguments[door-1] ) {
+    alert("Door does not exist, try again");
+    doorGames2.apply(null,arguments);
+  } else {
+    alert("Congrats, you just won " + arguments[door-1]);
+    return arguments[door-1];
+  }
+}
+
 var prizes = ["An NYC Apartment","A Playstation 4 Pro", "A rotten fish"];
-doorGame(prizes);
+// doorGame(prizes);
 // // anonymous function
 // function(){
 //   return 1;
