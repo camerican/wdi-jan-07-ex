@@ -20,7 +20,22 @@ document.addEventListener("DOMContentLoaded",function(){
   var boxes = document.querySelectorAll(".box");
   for( var x=0; x<boxes.length; x++ ) {
     goPurple(boxes[x],(x+1)*1000)
+    if( x % 2 ) {
+      boxes[x].innerHTML = "<h2>Box " + (x+1) + "</h2>";
+    } 
   }
+
+  //Select the h1
+  var h1 = document.querySelector("h1");
+  h1.addEventListener("click",function(event){
+    // alert( h1.innerText );
+    alert( event.target.innerText );
+  });
+  // $("h1").on("click",function(){});
+  // $("h1").click(function(event){
+  //   alert($(event.target).text() );
+  //   console.log( event );
+  // });
 });
 
 function goPurple(element,delay) {
@@ -28,6 +43,17 @@ function goPurple(element,delay) {
     element.style.backgroundColor = "#ff00ff";
   },delay);
 }
+
+
+
+
+// document.getElementsByTagName("h1")[0]
+
+// document.getElementById("box1")
+// document.querySelector("#box")
+// jQuery("#box")
+// $("#box")
+
 // document.querySelector("#p1")
 // document.querySelector("p")
 // document.querySelectorAll("#p1")[0];
