@@ -7,7 +7,18 @@ document.addEventListener("DOMContentLoaded",function(){
     event.preventDefault();
   });
   console.log("Page is loaded");
+  // document.getElementsByTagName("h1")[0].innerText += " & Day 7";
+  setTimeout(function(){
+    document.querySelector("h1").innerText += " & Day 7";
+  },1000);
+  
 });
+
+// var document = {
+//   querySelector: function(){
+//     // do the query selector thing..
+//   }
+// }
 
 function addFormVals(){
   var num1 = parseInt(document.getElementById("num1").value);
