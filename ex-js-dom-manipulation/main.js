@@ -16,7 +16,26 @@
 //   },4000);
 // });
 
+ //                        argument 1    argument 2
+//                         \- type - /\ - callback-/
+document.addEventListener("keypress",function(event){
+  console.log( "You pressed the " + event.key + " key" );
+  if( event.key == ' ' ) {
+    document.querySelector("h2").innerHTML += "&nbsp;";
+    event.preventDefault();
+  } else {
+    document.querySelector("h2").innerText += event.key;
+  }
+  
+});
+
 document.addEventListener("DOMContentLoaded",function(){
+
+
+
+  //alternatively you could write
+  //  document.onkeypress = function(){}
+
   var boxes = document.querySelectorAll(".box");
   for( var x=0; x<boxes.length; x++ ) {
     goPurple(boxes[x],(x+1)*1000)
@@ -38,11 +57,21 @@ document.addEventListener("DOMContentLoaded",function(){
   // });
 });
 
+// Alfe Question
+
+// var answer = prompt("What is a muscle building supplment");
+
+// //if( answer === "Protein" || answer === "protein")
+// if( answer.toLowerCase() === "protein" ) {
+
+// }
+
 function goPurple(element,delay) {
   setTimeout(function(){
     element.style.backgroundColor = "#ff00ff";
   },delay);
 }
+
 
 
 
