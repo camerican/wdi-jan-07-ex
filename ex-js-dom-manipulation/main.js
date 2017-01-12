@@ -31,21 +31,53 @@ document.addEventListener("keypress",function(event){
 
 document.addEventListener("DOMContentLoaded",function(){
 
+  var menu = document.getElementById("menu");
+
+  // setTimeout(function(){
+  //   menu.style.display = "block";
+  //   setTimeout(function(){
+  //       menu.style.display = "none";
+  //     },3000);
+  // },3000);
+  showMenu(3000);
+
+  function showMenu(delay){
+    delay = delay || 1;
+    setTimeout(function(){
+     menu.style.display = "block";
+     hideMenu(delay);
+    },delay);
+  }
+  function hideMenu(delay){
+    delay = delay || 1;
+    setTimeout(function(){
+      menu.style.display = "none";
+      showMenu(delay);
+    },delay);
+  }
+
+
+  menu.querySelector(".close").addEventListener("click",function(){
+    menu.style.display = "none";
+  });
+
   document.getElementById("login").addEventListener("submit",function(event){
     event.preventDefault();
 
     var elUser = document.querySelector("input[name=username]");
     var elPass = document.querySelector("input[name=password]");
-    if( elUser.value.includes(0) || 
-        elUser.value.includes(1) ||
-        elUser.value.includes(2) ||
-        elUser.value.includes(3) ||
-        elUser.value.includes(4) ||
-        elUser.value.includes(5) ||
-        elUser.value.includes(6) ||
-        elUser.value.includes(7) ||
-        elUser.value.includes(8) ||
-        elUser.value.includes(9) ) {
+
+    var username = elUser.value
+    if( username.includes(0) || 
+        username.includes(1) ||
+        username.includes(2) ||
+        username.includes(3) ||
+        username.includes(4) ||
+        username.includes(5) ||
+        username.includes(6) ||
+        username.includes(7) ||
+        username.includes(8) ||
+        username.includes(9) ) {
       // contains a number
     }
     var fContainsNumber = false;
@@ -56,7 +88,7 @@ document.addEventListener("DOMContentLoaded",function(){
     }
     // /[0-9]/
     /\d/.test(elUser.value)
-    
+
   //  \D - not a digit
   //  \d - a digit
   });
@@ -91,6 +123,8 @@ document.addEventListener("DOMContentLoaded",function(){
 
 // //if( answer === "Protein" || answer === "protein")
 // if( answer.toLowerCase() === "protein" ) {
+
+
 
 // }
 
