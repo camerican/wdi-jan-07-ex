@@ -31,7 +31,35 @@ document.addEventListener("keypress",function(event){
 
 document.addEventListener("DOMContentLoaded",function(){
 
+  document.getElementById("login").addEventListener("submit",function(event){
+    event.preventDefault();
 
+    var elUser = document.querySelector("input[name=username]");
+    var elPass = document.querySelector("input[name=password]");
+    if( elUser.value.includes(0) || 
+        elUser.value.includes(1) ||
+        elUser.value.includes(2) ||
+        elUser.value.includes(3) ||
+        elUser.value.includes(4) ||
+        elUser.value.includes(5) ||
+        elUser.value.includes(6) ||
+        elUser.value.includes(7) ||
+        elUser.value.includes(8) ||
+        elUser.value.includes(9) ) {
+      // contains a number
+    }
+    var fContainsNumber = false;
+    for( var i=0; !fContainsNumber && i < elUser.value.length; i++ ) {
+      if( "0123456789".includes(elUser.value[i]) ){
+        fContainsNumber = true;
+      }
+    }
+    // /[0-9]/
+    /\d/.test(elUser.value)
+    
+  //  \D - not a digit
+  //  \d - a digit
+  });
 
   //alternatively you could write
   //  document.onkeypress = function(){}
