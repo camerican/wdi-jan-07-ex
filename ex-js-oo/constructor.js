@@ -16,4 +16,34 @@ function University( name, founded, city ) {
 }
 
 var nyu = new University("New York University",1860,"New York");
+
+// adding an attribute
+University.prototype.public = true;
+// add a method
+University.prototype.isPublic = function() {
+  return this.public;
+}
+
 var princeton = new University("Princeton",1820,"Princeton");
+princeton.isPublic();
+
+
+// name, year of birth
+function Person( name, yob ) {
+  this.name = name;
+  this.year = yob;
+}
+// lawsuits, other params
+function President( lawsuits ) {
+  this.great = true;
+  this.lawsuits = lawsuits;
+  // pass along all variables after lawsuits
+  Person.apply(this,Array.prototype.slice.call(arguments,1));
+}
+// President.prototype = new Person;
+
+var cam = new Person( "Cam", 1981 ); 
+var trump = new President( 45, "Don", 1960 );
+
+
+
