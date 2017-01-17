@@ -1,0 +1,31 @@
+.trafficLight{
+  width:170px;
+  height:520px;
+  background-color: #8888aa;
+  text-align:center;
+}
+.trafficLight .light{
+  width:150px;
+  height:150px;
+  border-radius: 50%;
+  display:inline-block;
+  margin:10px 10px 0;
+}
+.trafficLight .red{
+  background-color: #995555;
+}
+.trafficLight .red.on{
+  background-color: #ff2222;
+}
+.trafficLight .yellow{
+  background-color: #cccc99;
+}
+.trafficLight .yellow.on{
+  background-color: #ffff55;
+}
+.trafficLight .green {
+  background-color: #559955;
+}
+.trafficLight .green.on {
+  background-color: #22ff22;
+}

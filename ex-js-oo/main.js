@@ -10,11 +10,40 @@ function TrafficLight( id, isGreen ) {
   this.id = id;
   this.states = ["red","yellow","green"];
   this.green = isGreen || false;
+  this.el = document.getElementById("tl_"+this.id);
+  this.updateHTML = function(){
+    this.turnOffAll();  // first turn off all the lights
+    if( this.green ) {  // if we should be green
+      this.el.querySelector(".green").classList.add("on");
+    } else {            // if we should be red
+      this.el.querySelector(".red").classList.add("on");
+    }
+  }
+  this.turnOffAll = function(){
+    this.el.querySelectorAll(".light").forEach(function(c){
+      c.classList.remove("on");
+    });
+  }
+  this.changeLight = function(){
+    console.log("Changing light");
+    this.green = !this.green;
+    this.updateHTML();
+  }
 }
 var trafficLights = [];
-for( var i = 0, id = 1467; i < 3; i++, id++) {
-  trafficLights[i] = new TrafficLight(id,true);
-}
+//Wait for DOM to load before creating our traffic lights
+document.addEventListener("DOMContentLoaded",function(){
+  for( var i = 0, id = 1467; i < 3; i++, id++) {
+    trafficLights[i] = new TrafficLight(id,true);
+  }
+  // update the first light (right now the only one we have on the page)
+  trafficLights[0].updateHTML();
+  document.getElementById("tl_"+trafficLights[0].id).addEventListener("click",function(event){
+    trafficLights[0].changeLight();
+  });
+})
+
+
 
 
 
