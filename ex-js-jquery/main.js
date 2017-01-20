@@ -31,22 +31,28 @@ function boxesOut(el) {
   });
 }
 //.ajax test
+// $.ajax({
+//   type: "GET",
+//   url: "https://api.spotify.com/v1/search",
+//   data: {
+//     type: "artist",
+//     q: "Taylor Swift"
+//   },
+//   success: function(data){
+//     console.log(data);
+//     for(var i=0; i<data.artists.items.length; i++){
+//       document.getElementById("results").innerHTML += "<li>" + data.artists.items[i].name + "</li>";
+//     }
+//   }
+// })
+
 $.ajax({
   type: "GET",
-  url: "https://api.spotify.com/v1/search",
-  data: {
-    type: "artist",
-    q: "Taylor Swift"
-  },
-  success: function(data){
-    console.log(data);
-    for(var i=0; i<data.artists.items.length; i++){
-      document.getElementById("results").innerHTML += "<li>" + data.artists.items[i].name + "</li>";
-    }
+  url: "http://art-share.herokuapp.com/api/v1/users/",
+  success: function(data) {
+    console.log( data );
   }
 })
-
-
 
 // $("#test").on("click",function(){
 
