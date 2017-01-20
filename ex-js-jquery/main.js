@@ -6,11 +6,11 @@
   
 // })
 
-// $(document).ready(function(){
+$(document).ready(function(){
   $("#test").click(function(){
     $("h1").html("Happy Friday!");
   })
-// })
+})
 
 
 // $("#test").on("click",function(){
