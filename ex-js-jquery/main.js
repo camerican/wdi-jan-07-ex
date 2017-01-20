@@ -30,7 +30,7 @@ function boxesOut(el) {
     boxesIn(el);
   });
 }
-//.ajax test
+// //.ajax test
 // $.ajax({
 //   type: "GET",
 //   url: "https://api.spotify.com/v1/search",
@@ -50,9 +50,59 @@ $.ajax({
   type: "GET",
   url: "http://art-share.herokuapp.com/api/v1/users/",
   success: function(data) {
-    console.log( data );
+    // console.log( data );
+    // for(var i=0; i < data.result.length; i++ ) {
+    //   document.getElementById("results").innerHTML += "<li>" + data.result[i].fname + " " + data.result[i].lname + "(" + data.result[i].email + ")</li>";
+    // }
+    data.result.forEach(function(result){
+      document.getElementById("results").innerHTML += "<li>" + result.fname + " " + result.lname + "(" + result.email + ")</li>";
+    });
   }
+});
+
+// Our fun error message....
+// $.ajax({
+//   url: "http://nycda.com",
+//   type: "GET",
+//   success: function(happyfriday){
+//     console.log( happyfriday );
+//   }
+// })
+
+// This ajax is the same as getJSON
+// $.ajax({
+//   url: "http://omdbapi.com",
+//   data: {t: "Sharknado"},
+//   success: function(data){
+//     console.log(data);
+//   }
+// });
+
+$.getJSON("http://omdbapi.com",{
+  t: "Sharknado"
+},function(data){
+  console.log(data);
+  // document.getElementById("movie-title").innerHTML = "something"
+  $("#movie-title").html(data.Title).fadeIn(2000);
+  $("#movie-poster").attr("src",data.Poster).fadeIn(3000);
+  // document.getElementById("movie-poster").src = data.Poster;
+  // $("#movie-title,#movie-poster").fadeIn(2000);
+});
+
+$.ajax({
+   url: "https://api.spotify.com/v1/artists/3j0kMFxXTTYsuw1twLClw3/top-tracks",
+   data: {
+     country: "AU",
+   },
+   success: function(data){
+     console.log(data);
+     our_songs = data.tracks.map(function(song){
+       return song.preview_url;
+     });
+   }
 })
+
+
 
 // $("#test").on("click",function(){
 
