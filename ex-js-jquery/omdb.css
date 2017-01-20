@@ -12,7 +12,15 @@ body > header .content,
 #results {
   width: 900px;
   margin: 0 auto;
+  text-align:center;
+}
+#results {
+  padding-top: 10px;
 }
 #search {
   font-size: 26px;
+}
+.movie{
+  width: 400px;
+  display:inline-block;
 }
