@@ -30,6 +30,23 @@ function boxesOut(el) {
     boxesIn(el);
   });
 }
+//.ajax test
+$.ajax({
+  type: "GET",
+  url: "https://api.spotify.com/v1/search",
+  data: {
+    type: "artist",
+    q: "Taylor Swift"
+  },
+  success: function(data){
+    console.log(data);
+    for(var i=0; i<data.artists.items.length; i++){
+      document.getElementById("results").innerHTML += "<li>" + data.artists.items[i].name + "</li>";
+    }
+  }
+})
+
+
 
 // $("#test").on("click",function(){
 
