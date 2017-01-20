@@ -106,8 +106,8 @@ $.ajax({
    }
 })
 
- append( "<p>" + mydata + "</p> <img src=\"" + response.Search[i].Poster + "\">" )
- append( `<p>${mydata}</p> <img src="${response.Search[i].Poster}">`);
+ // append( "<p>" + mydata + "</p> <img src=\"" + response.Search[i].Poster + "\">" )
+ // append( `<p>${mydata}</p> <img src="${response.Search[i].Poster}">`);
 
 
 // $("#test").on("click",function(){
