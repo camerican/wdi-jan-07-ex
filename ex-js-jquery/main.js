@@ -96,12 +96,18 @@ $.ajax({
    },
    success: function(data){
      console.log(data);
+     // just setting a global variable so we can
+     // look at the results in the console...
      our_songs = data.tracks.map(function(song){
        return song.preview_url;
      });
+     // ES6 syntax
+     our_songs = data.tracks.map( song => song.preview_url);
    }
 })
 
+ append( "<p>" + mydata + "</p> <img src=\"" + response.Search[i].Poster + "\">" )
+ append( `<p>${mydata}</p> <img src="${response.Search[i].Poster}">`);
 
 
 // $("#test").on("click",function(){
