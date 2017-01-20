@@ -1,0 +1,18 @@
+body {
+  margin: 0;
+  font-size: 36px;
+  font-family: Georgia, sans-serif;
+}
+body > header {
+  background-color: #CC3333;
+  color: #fff;
+  padding-bottom: 10px;
+}
+body > header .content,
+#results {
+  width: 900px;
+  margin: 0 auto;
+}
+#search {
+  font-size: 26px;
+}
