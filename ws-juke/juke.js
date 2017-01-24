@@ -11,7 +11,7 @@ window.addEventListener("load",function(){
   });
 
   SC.get("/tracks",{
-    q: "Pirates"
+    q: "Thriller"
   }).then(function(response){
     console.log(response);
   });
