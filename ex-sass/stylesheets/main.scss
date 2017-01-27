@@ -2,7 +2,7 @@ $main-color: #ff0000;
 $second-color: #ff9999;
 
 @import 'header';
-
+@import 'bourbon/bourbon';
 /* Mixin Practice*/
 // Don't talk nerdy to me
 /* Create a mixin called black... it will change background to the given opacity */
