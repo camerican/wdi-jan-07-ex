@@ -1,0 +1,57 @@
+$main-color: #ff0000;
+$second-color: #ff9999;
+
+@import 'header';
+
+/* Mixin Practice*/
+// Don't talk nerdy to me
+/* Create a mixin called black... it will change background to the given opacity */
+
+@mixin black($opacity){
+  background-color: rgba(25,25,25,$opacity);
+}
+
+@mixin white($opacity){
+  background-color: rgba(255,255,255,$opacity);
+}
+
+body {
+  margin: 0;
+}
+body.cover:before {
+  content: '';
+  position: fixed;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+  @include white(0.85);
+}
+
+#modal {
+  display:none;
+}
+
+body.cover #modal {
+  position: fixed;
+  top:20%;
+  bottom:20%;
+  right:20%;
+  left:20%;
+  background-color: $second-color;
+  z-index:1;
+  display: block;
+}
+
+#box1 {
+  width: 200px;
+  height: 200px;
+}
+#box2 {
+  @extend #box1;
+  background-color: red;
+  height: 100px; 
+}
+
+
+
