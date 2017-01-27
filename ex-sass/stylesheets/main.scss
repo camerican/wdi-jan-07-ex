@@ -1,8 +1,12 @@
-$main-color: #ff0000;
+@import 'bourbon/bourbon';
+
+$isValentines: false;
+
+$main-color: tint(purple, 50%);
 $second-color: #ff9999;
 
 @import 'header';
-@import 'bourbon/bourbon';
+
 /* Mixin Practice*/
 // Don't talk nerdy to me
 /* Create a mixin called black... it will change background to the given opacity */
@@ -15,8 +19,15 @@ $second-color: #ff9999;
   background-color: rgba(255,255,255,$opacity);
 }
 
+.box {
+  background-color: tint(purple, 50%);
+}
 body {
   margin: 0;
+  font-size: em(60px);
+  @if $isValentines {
+    background-color: tint(red,60%);
+  }
 }
 body.cover:before {
   content: '';
@@ -43,15 +54,35 @@ body.cover #modal {
   display: block;
 }
 
-#box1 {
-  width: 200px;
-  height: 200px;
-}
-#box2 {
-  @extend #box1;
-  background-color: red;
-  height: 100px; 
+// #box1 {
+//   width: 200px;
+//   height: 200px;
+// }
+// #box2 {
+//   @extend #box1;
+//   background-color: red;
+//   height: 100px; 
+// }
+@for $i from 1 through 6 {
+  h#{$i} {
+    color: red;
+    // font-size: 72px / $i;
+    font-size: 72px - (($i - 1)*12);
+  }
 }
 
+
+
+@for $i from 1 through 5 {
+  $adjust: 0px;
+  @if $i % 2 == 0 {
+    $adjust: 40px; 
+  }
+
+  #box#{$i} {
+    width: 100px * $i + $adjust;
+    height: 100px * $i + $adjust;
+  }
+}
 
 

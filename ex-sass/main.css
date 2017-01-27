@@ -1,6 +1,6 @@
 nav {
   width: 100%;
-  background-color: #ff0000;
+  background-color: #c080c0;
   margin: 0; }
   nav ul {
     list-style: none; }
@@ -10,8 +10,12 @@ nav {
 
 /* Mixin Practice*/
 /* Create a mixin called black... it will change background to the given opacity */
+.box {
+  background-color: #c080c0; }
+
 body {
-  margin: 0; }
+  margin: 0;
+  font-size: 3.75em; }
 
 body.cover:before {
   content: '';
@@ -35,12 +39,48 @@ body.cover #modal {
   z-index: 1;
   display: block; }
 
-#box1, #box2 {
-  width: 200px;
-  height: 200px; }
+h1 {
+  color: red;
+  font-size: 72px; }
+
+h2 {
+  color: red;
+  font-size: 60px; }
+
+h3 {
+  color: red;
+  font-size: 48px; }
+
+h4 {
+  color: red;
+  font-size: 36px; }
+
+h5 {
+  color: red;
+  font-size: 24px; }
+
+h6 {
+  color: red;
+  font-size: 12px; }
+
+#box1 {
+  width: 100px;
+  height: 100px; }
 
 #box2 {
-  background-color: red;
-  height: 100px; }
+  width: 240px;
+  height: 240px; }
+
+#box3 {
+  width: 300px;
+  height: 300px; }
+
+#box4 {
+  width: 440px;
+  height: 440px; }
+
+#box5 {
+  width: 500px;
+  height: 500px; }
 
 /*# sourceMappingURL=main.css.map */
