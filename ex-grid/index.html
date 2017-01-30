@@ -4,10 +4,28 @@
   <meta charset="UTF-8">
   <title>Grid Example</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="default.css" />
 </head>
 <body>
   <h1>Grid Example</h1>
   <p>We'll need a .container class that will have .row (s) inside of it... then we'll use the .col-xs and .col-lg classes to create the layout drawn on the whiteboard.</p>
   <hr />
+  <div class="container-fluid"><!-- Master Container -->
+    <div class="row"><!-- Row 1 -->
+      <div class="col-xs-12 banner col-md-3">
+      </div><!-- banner content area -->
+      <div class="col-xs-12 col-md-9 banner-alt">
+      </div>
+    </div><!-- End Row 1-->
+    <!-- Row 2 -->
+      <!-- Mid col 1-->
+      <!-- Mid col 2-->
+      <!-- Mid col 3-->
+    <!-- End Row 2-->
+    <!-- Row 3 -->
+      <!-- Lower col 1-->
+      <!-- Lower col 2-->
+    <!-- End Row 3 -->
+  </div><!-- End Master Container-->
 </body>
 </html>
