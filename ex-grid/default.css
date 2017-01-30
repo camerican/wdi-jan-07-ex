@@ -6,3 +6,18 @@
   background-color: green;
   height: 200px;
 }
+.br {
+  border-right: 1px solid black;
+}
+.yellow {
+  background-color: yellow;
+}
+.green {
+  background-color: green;
+}
+.red {
+  background-color: red;
+}
+/*.row {
+  margin-bottom: 15px;
+}*/
