@@ -1,0 +1,9 @@
+source "http://rubygems.org"
+
+gem "sinatra"
+
+# Command Line Instructions:
+
+# sudo gem install bundler
+# bundle install
+# # if that fails, try bundle exec install
