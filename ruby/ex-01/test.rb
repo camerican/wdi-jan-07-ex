@@ -124,13 +124,13 @@ puts max arr
 
 class Team
   @@total = 0
-  attr_accesor :city, :name
+  attr_accessor :city, :name
   def initialize name, city
     @name = name
     @city = city
   end
   def to_s
-    "The " + @city + " " @name
+    "The " + @city + " " + @name
   end
   def self.total
     @@total
@@ -153,10 +153,47 @@ end
 pokemon1 = Pokemon.new "Squirtle", 0, 1, 2
 
 
+# - Try creating your own object with at least two attributes and one instance method
 
+# - Instantiate a new copy of the object and assign it to a variable
 
+# - Change the attributes of your instance and try calling the method you've created on it
 
+# - Once you've been able to do this successfully, create a new method that references the two attributes
+class Pog
+  attr_reader :popularity
+  attr_accessor :color
+  def initialize color, popularity
+    @color = color
+    @popularity = popularity
+  end
+  def isCool?
+    calculated_coolness = 0
+    if @color == "red"
+      calculated_coolness = @popularity * 3
+    else
+      calculated_coolness = @popularity
+    end
+    if calculated_coolness > 10 
+      true
+    else
+      false
+    end
+  end
+end
 
+pog_collection = []
+20.times do 
+  pog_collection.push( Pog.new ["red","blue","green"].sample, rand(20) )
+end
+
+class Game
+  attr_accessor :title
+end
+
+class CardGame < Game
+  attr_accessor :decks
+end
 
 
 
