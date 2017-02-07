@@ -1,0 +1,7 @@
+nav {
+  background-color: #993333;
+}
+body#home nav{
+  background-color: green;
+}
+/* Customize per page */

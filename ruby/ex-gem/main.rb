@@ -4,13 +4,24 @@ require 'rainbow'
 require 'sinatra'
 require 'json'
 
+set :menu, [
+  {title: "Home",
+   route: "/"},
+  {title: "About",
+   route: "/about"},
+  {title: "Contact",
+   route: "/contact"}
+]
+
 get '/' do
-  @mood = "Happy"
+  @bodyId = "home"
+  @roster = %w(Alfe Jarvis Robert Sel Joel Nick Ber Kyle Mauricio Eric James Steve Angie Hak)
+  @moods = %w(Happy Sad Mad Grumpy Sleepy Placid Contemplative)
   erb :index
 end
 
 get '/about' do
-  "This is our wonderful company"
+  erb :about
 end
 
 get '/contact' do
@@ -28,16 +39,6 @@ get '/contact' do
   </html>
   SOMEHTMLHERE
 end
-
-
-
-
-
-
-
-
-
-
 
 
 get "/locate/:site" do
